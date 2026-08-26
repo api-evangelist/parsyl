@@ -1,0 +1,27 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.parsyl.com/ ; https://github.com/parsyl ; https://registry.npmjs.org/-/v1/search?text=parsyl
+status: none
+note: >-
+  No Model Context Protocol server, hosted or local, could be found for Parsyl.
+  The company site names no MCP surface, the Parsyl Inc. GitHub organization
+  (8 public repositories, all Go/Kotlin/Python infrastructure libraries such as
+  parquet, sqrl and go-athena — none Parsyl-API related) publishes none, and npm
+  and PyPI carry no parsyl package. No candidate tool list could be derived
+  either, because Parsyl publishes no OpenAPI to derive one from. No MCPServer
+  pointer is emitted in apis.yml.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+evidence:
+- url: https://api.github.com/orgs/parsyl/repos
+  status: 200
+- url: https://registry.npmjs.org/-/v1/search?text=parsyl
+  status: 200
+- url: https://pypi.org/pypi/parsyl/json
+  status: 404

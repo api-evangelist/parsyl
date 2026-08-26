@@ -1,0 +1,19 @@
+generated: '2026-08-26'
+method: searched
+source: https://docs.parsyl.com/
+limit_count: 0
+note: >-
+  No rate limits are published. Parsyl's API documentation is served only to
+  authenticated users — docs.parsyl.com 302s every path to /auth/login behind an
+  Amazon Cognito user pool — so any documented limits sit behind that wall. The
+  API host api.parsyl.io returns HTTP 403 "Missing Authentication Token" to
+  anonymous requests and emits no RateLimit-*, X-RateLimit-* or Retry-After
+  headers on that response, so nothing could be observed at runtime either.
+  limit_count: 0 records a measured absence.
+rate_limits: []
+response_headers: []
+evidence:
+- url: https://docs.parsyl.com/
+  status: 302
+- url: https://api.parsyl.io/
+  status: 403

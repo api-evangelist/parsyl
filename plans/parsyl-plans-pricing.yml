@@ -1,0 +1,21 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.parsyl.com/contact
+plan_count: 0
+note: >-
+  Parsyl publishes no plans, tiers or price list. It is an insurance business:
+  cargo, stock throughput, excess stock, legal liability and parametric spoilage
+  cover are quoted per risk, and the buying path is a broker or the contact form —
+  https://www.parsyl.com/pricing returns HTTP 404 and no pricing page appears
+  anywhere in https://www.parsyl.com/sitemap.xml. There is likewise no published
+  price for API access; the Parsyl Platform API is bundled with a customer or
+  Data Partner Program relationship rather than sold as a metered product.
+  plan_count: 0 is a measured zero, not an unchecked field.
+plans: []
+evidence:
+- url: https://www.parsyl.com/pricing
+  status: 404
+- url: https://www.parsyl.com/sitemap.xml
+  status: 200
+- url: https://www.parsyl.com/brokers
+  status: 200

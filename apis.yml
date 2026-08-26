@@ -1,8 +1,21 @@
 aid: parsyl
 name: Parsyl
-description: 'Parsyl is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Parsyl Inc. is a Denver, Colorado based technology-enabled cargo insurance
+  company for perishable and temperature-sensitive supply chains, with an office in
+  London and underwriting capacity placed at Lloyd''s of London. It pairs IoT temperature
+  and condition sensors with a data platform that turns shipment telemetry into risk
+  insight, and sells that insight back as connected marine cargo insurance products
+  — ColdCover cargo insurance, stock throughput, excess stock, legal liability, a
+  small-business program, and the cargo market''s first parametric spoilage policy.
+  Customers include food, seafood, pharmaceutical, vaccine and semiconductor shippers,
+  plus global health programs such as Africa CDC and PFSCM. Parsyl runs a Data Partner
+  Program that ingests telemetry from third-party monitoring vendors (Berlinger, Copeland,
+  Roambee, Sensitech, Tive) and offers custom API integration so customers can pull
+  their own systems'' data into the Parsyl Platform. The API surface is real but is
+  documented only to authenticated customers at docs.parsyl.com; no OpenAPI, AsyncAPI,
+  MCP server or agent card is published publicly.'
 url: https://raw.githubusercontent.com/api-evangelist/parsyl/refs/heads/main/apis.yml
+image: https://www.parsyl.com/hubfs/favicon.ico
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,12 +25,84 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
-apis: []
+- Insurance
+- Cargo Insurance
+- Supply Chain
+- Cold Chain
+- Logistics
+- Internet of Things
+- Sensors
+- Risk Management
+- Food Safety
+- Pharmaceuticals
+- Global Health
+apis:
+- name: Parsyl Platform API
+  description: 'Parsyl offers custom API integration into the Parsyl Platform so customers
+    and Data Partner Program vendors can push or pull shipment, sensor and condition
+    data. Documentation is served from Parsyl''s own docs host, docs.parsyl.com, which
+    is fronted by CloudFront and gated by an Amazon Cognito user pool named parsyl-api-docs;
+    every path 302s to /auth/login. No public machine-readable contract is published.
+    A Parsyl-controlled API host exists at api.parsyl.io (AWS API Gateway, TLS cert
+    CN=api.parsyl.io) but it answers every anonymous request with HTTP 403 "Missing
+    Authentication Token", and no public Parsyl document names it as the base URL,
+    so baseURL is deliberately left unrecorded rather than guessed from the domain.'
+  humanURL: https://docs.parsyl.com/
+  properties:
+  - type: Documentation
+    url: https://docs.parsyl.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/parsyl-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.parsyl.com/
+- type: Documentation
+  url: https://docs.parsyl.com/
+- type: Blog
+  url: https://www.parsyl.com/media
+- type: Support
+  url: https://www.parsyl.com/contact
+- type: TermsOfService
+  url: https://www.parsyl.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.parsyl.com/privacy
+- type: GitHubOrganization
+  url: https://github.com/parsyl
+- type: Conformance
+  url: conformance/parsyl-conformance.yml
+- type: Compliance
+  url: conformance/parsyl-conformance.yml
+- type: Plans
+  url: plans/parsyl-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/parsyl-rate-limits.yml
+- type: LLMsTxt
+  url: llms/parsyl-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Parsyl's API reference lives on its own docs host, docs.parsyl.com, but every
+    path there — including /openapi.json and /.well-known/* — 302s to /auth/login
+    and into an Amazon Cognito user pool named parsyl-api-docs, so the contract is
+    readable only by an authenticated Parsyl customer.
+  evidence:
+  - url: https://docs.parsyl.com/openapi.json
+    status: 302
+  - url: https://docs.parsyl.com/auth/login
+    status: 302
+  - url: https://api.parsyl.io/openapi.json
+    status: 403
+  - url: https://www.parsyl.com/llms.txt
+    status: 404
+  checked: '2026-08-26'

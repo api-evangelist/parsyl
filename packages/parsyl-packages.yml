@@ -1,0 +1,45 @@
+generated: '2026-08-26'
+method: searched
+source: registry.npmjs.org ; pypi.org ; api.github.com/orgs/parsyl
+package_count: 0
+note: >-
+  Parsyl publishes no first-party client SDK on any registry. npm search for
+  "parsyl" returns zero packages; pypi.org/pypi/parsyl/json is 404; the Parsyl
+  Inc. GitHub organization has 8 public repositories and none of them is a client
+  for the Parsyl Platform API — they are generic Go/Kotlin/Python infrastructure
+  libraries (parquet, sqrl, go-postgis, go-athena, kable, tinyb, jira-lint,
+  fuzzy-feature-foundry), several unmaintained since 2016-2022. No SDKs pointer is
+  emitted in apis.yml, because there is no SDK to point at.
+packages: []
+related_open_source:
+- name: parsyl/parquet
+  url: https://github.com/parsyl/parquet
+  registry: github
+  official: true
+  official_note: published by the Parsyl Inc. GitHub organization
+  api_client: false
+  language: Go
+  version: null
+  published: '2025-04-17'
+  version_note: >-
+    Go module with no tagged release read from a registry endpoint; date is the
+    last push recorded by the GitHub API, not a release date.
+- name: parsyl/sqrl
+  url: https://github.com/parsyl/sqrl
+  registry: github
+  official: true
+  official_note: published by the Parsyl Inc. GitHub organization
+  api_client: false
+  language: Go
+  version: null
+  published: '2026-07-31'
+  version_note: >-
+    Fork of a fluent SQL builder; no registry metadata endpoint queried because it
+    is not a client library for the Parsyl API.
+evidence:
+- url: https://registry.npmjs.org/-/v1/search?text=parsyl
+  status: 200
+- url: https://pypi.org/pypi/parsyl/json
+  status: 404
+- url: https://api.github.com/orgs/parsyl/repos
+  status: 200

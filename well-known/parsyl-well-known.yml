@@ -1,0 +1,79 @@
+generated: '2026-08-26'
+method: probed
+source: live unauthenticated GET of /.well-known/* on every Parsyl-controlled host
+note: >-
+  Every probed path missed. www.parsyl.com is a HubSpot CMS site that returns a
+  branded HTML 404 for all /.well-known/* paths. docs.parsyl.com is a CloudFront
+  distribution in front of an Amazon Cognito user pool (parsyl-api-docs) and 302s
+  EVERY path, including /.well-known/*, to /auth/login. api.parsyl.io is an AWS
+  API Gateway that answers every anonymous request with HTTP 403
+  {"message":"Missing Authentication Token"}. No document was served, so no
+  WellKnown or SecurityTxt pointer is emitted in apis.yml — this file records an
+  absence, not a presence.
+hosts:
+- host: www.parsyl.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+- host: docs.parsyl.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 302
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 302
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 302
+    file: null
+  - path: /.well-known/agent.json
+    status: 302
+    file: null
+  - path: /llms.txt
+    status: 302
+    file: null
+- host: api.parsyl.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null

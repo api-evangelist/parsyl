@@ -1,0 +1,64 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.parsyl.com/media-old/soc2-type2-exam
+note: >-
+  Parsyl publishes no machine-readable contract, so nothing here is derived from a
+  spec. The single positive is a compliance program Parsyl announces on its own
+  site: a SOC 2 Type II examination it states it completes annually. Regulatory
+  posture is inferred from what the company IS rather than what it documents —
+  Parsyl is an insurance producer/MGA writing marine cargo business with capacity
+  at Lloyd's of London, so it operates under insurance regulation, but Parsyl
+  publishes no developer-facing compliance or standards page and no
+  domain-standard signature (ACORD, EDI, ISO 20022, X12) could be observed because
+  the contract is not public.
+conformance:
+- id: soc2-type2
+  conforms: true
+  evidence:
+    url: https://www.parsyl.com/media-old/soc2-type2-exam
+    status: 200
+    quote: >-
+      Parsyl states it completes a SOC 2 Type II examination each year, evaluated
+      by a licensed CPA firm, and lists two-factor authentication, encryption,
+      documented security policies and procedures, and a security training program
+      among its controls.
+    method: searched
+- id: oauth2
+  conforms: true
+  evidence:
+    url: https://docs.parsyl.com/auth/login
+    status: 302
+    quote: >-
+      Parsyl's API documentation host performs an OAuth 2.0 Authorization Code +
+      PKCE (S256) flow against an Amazon Cognito user pool
+      (parsyl-api-docs.auth.us-east-1.amazoncognito.com/oauth2/authorize,
+      scope "openid email profile"). This evidences OAuth2/OIDC on the DOCS
+      gateway only; it says nothing about how the Parsyl Platform API itself
+      authenticates, which is not publicly documented.
+    method: probed
+- id: oidc
+  conforms: unknown
+  evidence:
+    url: https://parsyl-api-docs.auth.us-east-1.amazoncognito.com/.well-known/openid-configuration
+    status: 404
+    quote: >-
+      The Cognito hosted-UI domain does not serve an OIDC discovery document at
+      the well-known path; the user-pool discovery URL is not publicly known, so
+      OIDC conformance cannot be asserted.
+    method: probed
+- id: rfc9457
+  conforms: false
+  evidence:
+    url: https://api.parsyl.io/
+    status: 403
+    quote: >-
+      The only observable error envelope is the AWS API Gateway default
+      {"message":"Missing Authentication Token"} with content-type
+      application/json — not application/problem+json. This is gateway behaviour,
+      not a Parsyl design choice, and no error reference is public.
+    method: probed
+domain_standard: null
+domain_standard_note: >-
+  Insurance/marine-cargo domain standards (ACORD messaging, EDI/X12) were looked
+  for and none is declared anywhere publicly reachable. REWARD-ONLY dimension —
+  recorded as absent, not as a failure.
