@@ -15,6 +15,17 @@ description: 'Parsyl Inc. is a Denver, Colorado based technology-enabled cargo i
   documented only to authenticated customers at docs.parsyl.com; no OpenAPI, AsyncAPI,
   MCP server or agent card is published publicly.'
 url: https://raw.githubusercontent.com/api-evangelist/parsyl/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.parsyl.com/hubfs/favicon.ico
 x-type: company
 x-source: harvest:secondary-market
