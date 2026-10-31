@@ -64,5 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Parsyl is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Parsyl Inc. is a Denver, Colorado based technology-enabled cargo insurance company for perishable and temperature-sensitive supply chains, with an office in London and underwriting capacity placed at Lloyd's of London. It pairs IoT temperature and condition sensors with a data platform that turns shipment telemetry into risk insight, and sells that insight back as connected marine cargo insurance products — ColdCover cargo insurance, stock throughput, excess stock, legal liability, a small-business program, and the cargo market's first parametric spoilage policy. Customers include food, seafood, pharmaceutical, vaccine and semiconductor shippers, plus global health programs such as Africa CDC and PFSCM. Parsyl runs a Data Partner Program that ingests telemetry from third-party monitoring vendors (Berlinger, Copeland, Roambee, Sensitech, Tive) and offers custom API integration so customers can pull their own systems' data into the Parsyl Platform. The API surface is real but is documented only to authenticated customers at docs.parsyl.com; no OpenAPI, AsyncAPI, MCP server or agent card is published publicly.
+
+**Areas:** Company · Insurance · Cargo Insurance · Supply Chain · Cold Chain · Logistics · IoT · Sensors · Risk Management · Food Safety · Pharmaceuticals · Global Health
+
+## Parsyl on APIs.io
+
+Everything profiled for Parsyl is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/parsyl/](https://apis.io/providers/parsyl/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Parsyl Platform API](https://apis.io/apis/parsyl/parsyl-platform-api/) — Parsyl offers custom API integration into the Parsyl Platform so customers and Data Partner Program vendors can push or pull shipment, sensor and condition…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Parsyl Domain Security](https://apis.io/security/parsyl/parsyl-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Parsyl Plans Pricing](https://apis.io/plans/parsyl/parsyl-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Parsyl Rate Limits](https://apis.io/rate-limits/parsyl/parsyl-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.parsyl.com/)
+- [Documentation](https://docs.parsyl.com/)
+- [Support](https://www.parsyl.com/contact)
+- [Blog](https://www.parsyl.com/media)
+- [Terms of service](https://www.parsyl.com/terms-and-conditions)
+- [Privacy policy](https://www.parsyl.com/privacy)
+- [GitHub](https://github.com/parsyl)
+
+## API Evangelist rating
+
+**Kin Score 16.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 28.9 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.1** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/parsyl/](https://apis.io/providers/parsyl/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Parsyl: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/parsyl/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
